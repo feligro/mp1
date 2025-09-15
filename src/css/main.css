@@ -1,0 +1,34 @@
+/* Your SCSS here. */
+body {
+  margin: 0;
+}
+
+#Navbar {
+  background-color: #4CAF50;
+  padding: 1%;
+  overflow: hidden;
+  color: white;
+  font-size: 24px;
+  display: grid;
+  grid-template-columns: 5fr repeat(4, 1fr);
+  align-items: center;
+}
+#Navbar h5 {
+  grid-column: 1/2;
+  font-size: 30px;
+  margin: 0;
+  text-align: center;
+}
+
+#GIFdiv {
+  display: flex;
+  justify-content: center;
+  background-color: lightgreen;
+  padding: 0.5%;
+}
+#GIFdiv DNAGif {
+  width: 100%;
+  height: auto;
+}
+
+/*# sourceMappingURL=main.css.map */
