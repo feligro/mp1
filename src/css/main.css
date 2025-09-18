@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Your SCSS here. */
 body {
   margin: 0;
@@ -7,10 +8,13 @@ body {
   background-color: #4CAF50;
   padding: 1%;
   overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
   color: white;
   font-size: 24px;
   display: grid;
-  grid-template-columns: 5fr repeat(4, 1fr);
+  grid-template-columns: 5fr repeat(5, 1fr);
   align-items: center;
 }
 #Navbar h5 {
@@ -23,12 +27,68 @@ body {
 #GIFdiv {
   display: flex;
   justify-content: center;
-  background-color: lightgreen;
+  background-color: purple;
   padding: 0.5%;
 }
 #GIFdiv DNAGif {
   width: 100%;
   height: auto;
+}
+
+#Footer {
+  background-color: #4CAF50;
+  color: white;
+  text-align: center;
+  padding: 1%;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ---------- MEDIA QUERIES ---------- */
+/* 1024 × 768 */
+@media (max-width: 1024px) {
+  #Navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+  #Navbar p {
+    margin: 0.5rem 0;
+  }
+}
+/* 1280 × 720 */
+@media (min-width: 1025px) and (max-width: 1280px) {
+  #Navbar h5 {
+    font-size: 1.5rem;
+  }
+  #Footer {
+    font-size: 0.85rem;
+  }
+}
+/* 1366 × 768 */
+@media (min-width: 1281px) and (max-width: 1366px) {
+  #Navbar {
+    justify-content: space-around;
+  }
+  #GIFdiv img {
+    max-width: 80%;
+  }
+}
+/* 1920 × 1080 */
+@media (min-width: 1367px) {
+  body {
+    font-size: 1.1rem;
+  }
+  #GIFdiv img {
+    max-width: 60%;
+  }
+  #Footer {
+    font-size: 1rem;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
