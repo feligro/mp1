@@ -36,6 +36,19 @@ body{
     }
 }
 
+.fixed-background {
+  height: 100vh; /* full height of the viewport */
+  background-image: url('assets/DNAchain'); /* replace with your image path */
+  background-size: cover; /* cover the section */
+  background-position: center; /* center the image */
+  background-attachment: fixed; /* keeps image fixed on scroll */
+}
+
+.content {
+  height: 200vh; /* makes page scrollable */
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
 #Footer {
     background-color: $gen-green-1;
     color: white;
@@ -45,9 +58,10 @@ body{
     bottom: 0;
     width: 100%;
     font-size: 14px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    display: grid;
+    grid-template-rows: 1fr 2 fr;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
 }
 
 

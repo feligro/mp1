@@ -14,7 +14,7 @@ body {
   color: white;
   font-size: 24px;
   display: grid;
-  grid-template-columns: 5fr repeat(5, 1fr);
+  grid-template-columns: 5fr repeat(4, 1fr);
   align-items: center;
 }
 #Navbar h5 {
@@ -33,6 +33,19 @@ body {
 #GIFdiv DNAGif {
   width: 100%;
   height: auto;
+}
+
+.fixed-background {
+  height: 100vh; /* full height of the viewport */
+  background-image: url("assets/DNAchain"); /* replace with your image path */
+  background-size: cover; /* cover the section */
+  background-position: center; /* center the image */
+  background-attachment: fixed; /* keeps image fixed on scroll */
+}
+
+.content {
+  height: 200vh; /* makes page scrollable */
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 #Footer {
