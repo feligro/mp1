@@ -10,7 +10,7 @@ body {
   overflow: hidden;
   position: fixed;
   top: 0;
-  width: 100%;
+  width: 98%;
   color: white;
   font-size: 24px;
   display: grid;
@@ -36,15 +36,15 @@ body {
 }
 
 .fixed-background {
-  height: 100vh; /* full height of the viewport */
-  background-image: url("assets/DNAchain"); /* replace with your image path */
+  height: 50vh; /* full height of the viewport */
+  background-image: "assets/DNAchain.png"; /* replace with your image path */
   background-size: cover; /* cover the section */
   background-position: center; /* center the image */
   background-attachment: fixed; /* keeps image fixed on scroll */
 }
 
 .content {
-  height: 200vh; /* makes page scrollable */
+  height: 70vh; /* makes page scrollable */
   background-color: rgba(255, 255, 255, 0.8);
 }
 
@@ -53,13 +53,12 @@ body {
   color: white;
   text-align: center;
   padding: 1%;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+  width: 98%;
   font-size: 14px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: grid;
+  grid-template-rows: 1fr 2 fr;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
 }
 
 /* ---------- MEDIA QUERIES ---------- */
