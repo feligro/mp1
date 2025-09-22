@@ -8,6 +8,10 @@ const slideEls = Array.from(track.children);
 let index = 0;
 let autoTimer;
 
+const nav = document.getElementById("Navbar");
+const links = nav.querySelectorAll("a");
+const sections = document.querySelectorAll("div[id]");
+
 /* FUNCTIONS */
 
 window.addEventListener('scroll', () => {

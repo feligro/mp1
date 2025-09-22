@@ -33,11 +33,9 @@ html {
         color: white;
         margin-right: 15px;
         text-decoration: none;
-        opacity: 0.6;
       }
     a.active {
-        opacity: 1;
-        font-weight: bold;
+        font-weight: bold underline;
       }
 }
 #Navbar.shrink {
