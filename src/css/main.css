@@ -4,6 +4,10 @@ body {
   margin: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 #Navbar {
   background-color: #4CAF50;
   padding: 1%;
@@ -16,6 +20,8 @@ body {
   display: grid;
   grid-template-columns: 5fr repeat(4, 1fr);
   align-items: center;
+  z-index: 100;
+  transition: height 0.2s, font-size 0.2s;
 }
 #Navbar h5 {
   grid-column: 1/2;
@@ -23,9 +29,15 @@ body {
   margin: 0;
   text-align: center;
 }
-#Navbar {
-  z-index: 100;
-  transition: height 0.2s, font-size 0.2s;
+#Navbar a {
+  color: white;
+  margin-right: 15px;
+  text-decoration: none;
+  opacity: 0.6;
+}
+#Navbar a.active {
+  opacity: 1;
+  font-weight: bold;
 }
 
 #Navbar.shrink {
@@ -36,6 +48,7 @@ body {
 .div1 {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   background-color: purple;
   padding: 0.5%;
@@ -55,6 +68,7 @@ body {
 .div2 {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   background-color: #008080;
   color: black;
@@ -62,32 +76,10 @@ body {
   z-index: 1;
 }
 
-.fixed-background {
-  height: 100vh;
-  background-image: url("../assets/DNAchain.png");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  position: fixed;
-  top: 15%;
-  left: 0;
-  width: 100%;
-  z-index: -1;
-}
-
-.content {
-  height: 50vh;
-  background-color: rgba(255, 255, 255, 0.418);
-  display: flex;
-  justify-content: center;
-  padding: 0.5%;
-  position: relative;
-  z-index: 1;
-}
-
 #carousel {
   position: relative;
   margin: auto;
+  overflow: hidden;
 }
 
 .slides {
@@ -145,9 +137,32 @@ body {
   background: rgba(0, 0, 0, 0.5);
   border: none;
   color: white;
-  padding: 10px;
+  padding: 20px;
   cursor: pointer;
   border-radius: 50%;
+}
+
+.fixed-background {
+  height: 100vh;
+  background-image: url("../assets/DNAchain.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: fixed;
+  top: 10%;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.content {
+  height: 50vh;
+  background-color: rgba(255, 255, 255, 0.418);
+  display: flex;
+  justify-content: center;
+  padding: 0.5%;
+  position: relative;
+  z-index: 1;
 }
 
 #Footer {

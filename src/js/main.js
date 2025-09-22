@@ -1,10 +1,22 @@
 /* Your JS here. */
 console.log('Hello World!')
 
+const nav = document.getElementById('Navbar');
+
 const track = document.getElementById('slides');
 const slideEls = Array.from(track.children);
 let index = 0;
 let autoTimer;
+
+/* FUNCTIONS */
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 0) {
+    nav.classList.add('shrink');
+  } else {
+    nav.classList.remove('shrink');
+  }
+});
 
 function showSlide(i) {
   index = (i + slideEls.length) % slideEls.length;
@@ -33,14 +45,3 @@ document.addEventListener('keydown', (e) => {
 });
 
 scheduleAuto();
-
-
-const nav = document.getElementById('Navbar');
-
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 0) {
-    nav.classList.add('shrink');
-  } else {
-    nav.classList.remove('shrink');
-  }
-});
