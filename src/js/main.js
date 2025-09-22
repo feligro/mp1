@@ -8,7 +8,6 @@ const slideEls = Array.from(track.children);
 let index = 0;
 let autoTimer;
 
-const nav = document.getElementById("Navbar");
 const links = nav.querySelectorAll("a");
 const sections = document.querySelectorAll("div[id]");
 
@@ -48,4 +47,24 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'ArrowLeft')  { showSlide(index - 1); scheduleAuto(); }
 });
 
+function highlightLink() {
+  let navBottom = nav.getBoundingClientRect().bottom;
+  let current = sections[0];
+
+  sections.forEach(sec => {
+    let rect = sec.getBoundingClientRect();
+    if (rect.top <= navBottom) {
+      current = sec; // last section passed
+    }
+  });
+
+  links.forEach(link => {
+    link.classList.toggle("active", link.getAttribute("href") === "#" + current.id);
+  });
+}
+
+/* TRIGGERS */
+
 scheduleAuto();
+window.addEventListener("scroll", highlightLink);
+highlightLink(); 
