@@ -34,7 +34,6 @@ body{
 .div1 {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   background-color: purple;
   padding: 0.5%;
@@ -52,7 +51,6 @@ body{
 .div2 {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   background-color: #008080;
   color: black;
@@ -167,6 +165,9 @@ body{
     p {
       margin: 0.5rem 0;
     }
+  }
+  .div1, .div2 {
+    width: 98%;
   }
 }
 
