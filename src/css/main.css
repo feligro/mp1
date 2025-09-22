@@ -6,6 +6,7 @@ body {
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: var(--navH, 0px);
 }
 
 #Navbar {
@@ -33,15 +34,14 @@ html {
   color: white;
   margin-right: 15px;
   text-decoration: none;
-  opacity: 0.6;
 }
 #Navbar a.active {
-  opacity: 1;
   font-weight: bold;
+  text-decoration: underline;
 }
 
 #Navbar.shrink {
-  height: 8%; /* smaller when scrolled */
+  height: 8%;
   font-size: 18px;
 }
 

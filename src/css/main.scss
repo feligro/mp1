@@ -7,6 +7,7 @@ body{
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: var(--navH, 0px)
 }
 
 #Navbar {
@@ -35,7 +36,8 @@ html {
         text-decoration: none;
       }
     a.active {
-        font-weight: bold underline;
+        font-weight: bold;
+        text-decoration: underline;
       }
 }
 #Navbar.shrink {

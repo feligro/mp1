@@ -27,11 +27,11 @@ function showSlide(i) {
 }
 
 function scheduleAuto() {
-  clearInterval(autoTimer);
+  clearTimeout(autoTimer);
   autoTimer = setTimeout(() => {
     showSlide(index + 1);
     scheduleAuto(); // reschedule the next tick
-  }, 3000);
+  }, 5000);
 }
 
 document.getElementById('next').addEventListener('click', () => {
@@ -48,23 +48,42 @@ document.addEventListener('keydown', (e) => {
 });
 
 function highlightLink() {
-  let navBottom = nav.getBoundingClientRect().bottom;
+  const navBottom = nav.getBoundingClientRect().bottom;
   let current = sections[0];
 
-  sections.forEach(sec => {
-    let rect = sec.getBoundingClientRect();
-    if (rect.top <= navBottom) {
-      current = sec; // last section passed
+  for (const sec of sections) {
+    const top = sec.getBoundingClientRect().top;
+    if (top - navBottom <= 1) {
+      current = sec;
+    } else {
+      break;
     }
-  });
+  }
 
   links.forEach(link => {
     link.classList.toggle("active", link.getAttribute("href") === "#" + current.id);
   });
 }
 
+function setNavHeightVar() {
+  document.documentElement.style.setProperty('--navH', nav.offsetHeight + 'px');
+}
+
 /* TRIGGERS */
 
 scheduleAuto();
+setNavHeightVar();
+
+window.addEventListener('resize', setNavHeightVar);
+window.addEventListener('scroll', setNavHeightVar);
+window.addEventListener('load', setNavHeightVar);
 window.addEventListener("scroll", highlightLink);
-highlightLink(); 
+window.addEventListener("hashchange", highlightLink);
+
+links.forEach(link => {
+  link.addEventListener("click", () => {
+    highlightLink();
+  });
+});
+
+highlightLink();
