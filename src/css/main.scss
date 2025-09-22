@@ -23,37 +23,124 @@ body{
         margin: 0;
         text-align: center;   
         }
+    z-index: 100;
+    transition: height 0.2s, font-size 0.2s;
+}
+#Navbar.shrink {
+  height: 8%;             /* smaller when scrolled */
+  font-size: 18px;
 }
 
-#GIFdiv {
-    display: flex;
-    justify-content: center;
-    background-color: purple;
-    padding: 0.5%;
-    DNAGif {
-        width: 100%;
-        height: auto;
-    }
+.div1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: purple;
+  padding: 0.5%;
+  color: white;
+  DNAGif {
+    width: 12%;
+    height: auto;
+  }
+  h3, h5, p {
+    text-align: center;
+  }
+  z-index: 1;
+}
+
+.div2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #008080;
+  color: black;
+  padding: 0.5%;
+  z-index: 1;
 }
 
 .fixed-background {
-  height: 50vh; /* full height of the viewport */
-  background-image: url("../assets/DNAchain.png"); /* replace with your image path */
-  background-size: cover; /* cover the section */
-  background-position: center; /* center the image */
-  background-attachment: fixed; /* keeps image fixed on scroll */
-  position: fixed;  /* 🔑 make it fixed on the screen */
-  top: 0;
+  height: 100vh;
+  background-image: url("../assets/DNAchain.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: fixed;
+  top: 15%;
   left: 0;
   width: 100%;
-  z-index: -1;      /* 🔑 send it behind content */
+  z-index: -1; 
 }
 
 .content {
-  height: 70vh; /* makes page scrollable */
-  background-color: rgba(255, 255, 255, 0.8);
-  position: relative; /* keep it above the background */
+  height: 50vh;
+  background-color: rgba(255, 255, 255, 0.418);
+  display: flex;
+  justify-content: center;
+  padding: 0.5%;
+  position: relative;
   z-index: 1;
+}
+
+#carousel {
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  will-change: transform;
+  gap: 0;
+}
+.slide {
+  flex: 0 0 100%;
+  padding: 0;
+  margin: 0;
+}
+.slide-content {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 1.25rem;
+  align-items: center;
+  padding: clamp(16px, 2.5vw, 28px);
+  width: 83%;
+  margin: 0 auto;
+}
+.text{
+  color: white;
+  h2{
+    margin: 0 0 .5rem;
+    font-size: clamp(1.3rem, 2.4vw, 2rem);
+  }
+  p{
+    margin: 0 0 1rem;
+    line-height: 1.6;
+  }
+}
+.media img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  object-fit: cover;
+}
+.buttons {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  button {
+  background: rgba(0,0,0,0.5);
+  border: none;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  }
 }
 
 #Footer {
@@ -64,7 +151,7 @@ body{
     width: 98%;
     font-size: 14px;
     display: grid;
-    grid-template-rows: 1fr 2 fr;
+    grid-template-rows: 1fr 1.2fr;
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
 }
