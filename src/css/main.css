@@ -55,6 +55,7 @@ nav a.active {
   align-items: center;
   background-color: purple;
   padding: 3%;
+  width: 94%;
   color: white;
 }
 .section1 DNAGif {
@@ -73,9 +74,10 @@ nav a.active {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #008080;
+  background-color: #009999;
+  padding: 3%;
+  width: 94%;
   color: black;
-  padding: 0.5%;
   z-index: 1;
 }
 
@@ -137,12 +139,35 @@ nav a.active {
   transform: translateY(-50%);
 }
 .buttons button {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(128, 0, 128, 0.5);
   border: none;
   color: white;
   padding: 20px;
   cursor: pointer;
   border-radius: 50%;
+}
+
+#firstfaq {
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 3%;
+}
+#firstfaq video {
+  max-width: 98%;
+  width: 98%;
+  height: auto;
+}
+#firstfaq #QA {
+  text-align: center;
+}
+#firstfaq #QA h2 {
+  margin-bottom: 0;
+  font-size: 170%;
+}
+#firstfaq #QA p {
+  margin-top: 0;
+  font-size: 125%;
 }
 
 .fixed-background {
