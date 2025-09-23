@@ -9,8 +9,8 @@ html {
   scroll-padding-top: var(--navH, 0px);
 }
 
-#Navbar {
-  background-color: #4CAF50;
+nav {
+  background-color: #67bd6a;
   padding: 1.4%;
   overflow: hidden;
   position: fixed;
@@ -25,18 +25,18 @@ html {
   z-index: 100;
   transition: height 0.2s, font-size 0.2s;
 }
-#Navbar h5 {
+nav h5 {
   font-size: 30px;
   margin: 0;
   text-align: center;
 }
-#Navbar a {
+nav a {
   color: white;
   font-size: 23px;
   text-decoration: none;
   text-align: center;
 }
-#Navbar a.active {
+nav a.active {
   font-weight: bold;
   text-decoration: underline;
 }
@@ -48,7 +48,7 @@ html {
   font-size: 18px;
 }
 
-.div1 {
+.section1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -57,18 +57,18 @@ html {
   padding: 3%;
   color: white;
 }
-.div1 DNAGif {
+.section1 DNAGif {
   width: 12%;
   height: auto;
 }
-.div1 h1, .div1 h3, .div1 p {
+.section1 h1, .section1 h3, .section1 p {
   text-align: center;
 }
-.div1 {
+.section1 {
   z-index: 1;
 }
 
-.div2 {
+.section2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -160,28 +160,34 @@ html {
 
 .content {
   height: auto;
-  background-color: rgba(255, 255, 255, 0.418);
+  background-color: rgba(255, 255, 255, 0.68);
   padding: 3%;
   display: grid;
-  grid-template: 2fr repeat(2, 1fr)/repeat(3, 1fr);
+  grid-template-rows: 2fr repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   position: relative;
   z-index: 1;
 }
-.content h1, .content p {
+.content img {
+  max-width: 35%;
+  height: auto;
+  justify-self: center;
+}
+.content h2, .content p {
   text-align: center;
 }
 
 #Footer {
-  background-color: #4CAF50;
+  background-color: #67bd6a;
   color: white;
   text-align: center;
   padding: 1%;
   width: 98%;
-  height: 20%;
+  height: 10%;
   font-size: 14px;
   display: grid;
   grid-template-rows: 1fr 1.2fr;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   align-items: center;
 }
 
@@ -195,7 +201,7 @@ html {
   #Navbar p {
     margin: 0.5rem 0;
   }
-  .div1, .div2 {
+  .section1, .section2 {
     width: 98%;
   }
 }

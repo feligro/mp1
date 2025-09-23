@@ -1,23 +1,23 @@
 /* Your JS here. */
-console.log('Hello World!')
+console.log("Hello World!")
 
-const nav = document.getElementById('Navbar');
+const nav = document.getElementById("Navbar");
 
-const track = document.getElementById('slides');
+const track = document.getElementById("slides");
 const slideEls = Array.from(track.children);
 let index = 0;
 let autoTimer;
 
 const links = nav.querySelectorAll("a");
-const sections = document.querySelectorAll("div[id]");
+const sections = document.querySelectorAll("section[id]");
 
 /* FUNCTIONS */
 
-window.addEventListener('scroll', () => {
+window.addEventListener("scroll", () => {
   if (window.scrollY > 0) {
-    nav.classList.add('shrink');
+    nav.classList.add("shrink");
   } else {
-    nav.classList.remove('shrink');
+    nav.classList.remove("shrink");
   }
 });
 
@@ -34,17 +34,17 @@ function scheduleAuto() {
   }, 5000);
 }
 
-document.getElementById('next').addEventListener('click', () => {
+document.getElementById("next").addEventListener("click", () => {
   showSlide(index + 1);
   scheduleAuto();
 });
-document.getElementById('prev').addEventListener('click', () => {
+document.getElementById("prev").addEventListener("click", () => {
   showSlide(index - 1);
   scheduleAuto();
 });
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'ArrowRight') { showSlide(index + 1); scheduleAuto(); }
-  if (e.key === 'ArrowLeft')  { showSlide(index - 1); scheduleAuto(); }
+document.addEventListener("keydown", (e) => {
+  if (e.key === "ArrowRight") { showSlide(index + 1); scheduleAuto(); }
+  if (e.key === "ArrowLeft")  { showSlide(index - 1); scheduleAuto(); }
 });
 
 function highlightLink() {
@@ -66,7 +66,7 @@ function highlightLink() {
 }
 
 function setNavHeightVar() {
-  document.documentElement.style.setProperty('--navH', nav.offsetHeight + 'px');
+  document.documentElement.style.setProperty("--navH", nav.offsetHeight + "px");
 }
 
 /* TRIGGERS */
@@ -74,9 +74,9 @@ function setNavHeightVar() {
 scheduleAuto();
 setNavHeightVar();
 
-window.addEventListener('resize', setNavHeightVar);
-window.addEventListener('scroll', setNavHeightVar);
-window.addEventListener('load', setNavHeightVar);
+window.addEventListener("resize", setNavHeightVar);
+window.addEventListener("scroll", setNavHeightVar);
+window.addEventListener("load", setNavHeightVar);
 window.addEventListener("scroll", highlightLink);
 window.addEventListener("hashchange", highlightLink);
 
