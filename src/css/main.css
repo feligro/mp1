@@ -11,29 +11,30 @@ html {
 
 #Navbar {
   background-color: #4CAF50;
-  padding: 1%;
+  padding: 1.4%;
   overflow: hidden;
   position: fixed;
   top: 0;
   width: 98%;
+  height: 10%;
   color: white;
   font-size: 24px;
   display: grid;
-  grid-template-columns: 5fr repeat(4, 1fr);
+  grid-template-columns: 5fr repeat(4, 1.6fr);
   align-items: center;
   z-index: 100;
   transition: height 0.2s, font-size 0.2s;
 }
 #Navbar h5 {
-  grid-column: 1/2;
   font-size: 30px;
   margin: 0;
   text-align: center;
 }
 #Navbar a {
   color: white;
-  margin-right: 15px;
+  font-size: 23px;
   text-decoration: none;
+  text-align: center;
 }
 #Navbar a.active {
   font-weight: bold;
@@ -41,7 +42,9 @@ html {
 }
 
 #Navbar.shrink {
-  height: 8%;
+  height: 4%;
+}
+#Navbar.shrink a {
   font-size: 18px;
 }
 
@@ -51,14 +54,14 @@ html {
   justify-content: center;
   align-items: center;
   background-color: purple;
-  padding: 0.5%;
+  padding: 3%;
   color: white;
 }
 .div1 DNAGif {
   width: 12%;
   height: auto;
 }
-.div1 h3, .div1 h5, .div1 p {
+.div1 h1, .div1 h3, .div1 p {
   text-align: center;
 }
 .div1 {
@@ -106,7 +109,7 @@ html {
 }
 
 .text {
-  color: white;
+  color: black;
 }
 .text h2 {
   margin: 0 0 0.5rem;
@@ -156,13 +159,16 @@ html {
 }
 
 .content {
-  height: 50vh;
+  height: auto;
   background-color: rgba(255, 255, 255, 0.418);
-  display: flex;
-  justify-content: center;
-  padding: 0.5%;
+  padding: 3%;
+  display: grid;
+  grid-template: 2fr repeat(2, 1fr)/repeat(3, 1fr);
   position: relative;
   z-index: 1;
+}
+.content h1, .content p {
+  text-align: center;
 }
 
 #Footer {
@@ -171,6 +177,7 @@ html {
   text-align: center;
   padding: 1%;
   width: 98%;
+  height: 20%;
   font-size: 14px;
   display: grid;
   grid-template-rows: 1fr 1.2fr;
