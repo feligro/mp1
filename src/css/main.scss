@@ -1,86 +1,91 @@
-/* Your SCSS here. */
 $gen-green-1: #67bd6a;
 
-body{
-    margin:0;
-    font-family: "Verdana", "Lato";
+body {
+  margin: 0;
+  font-family: "Verdana", "Lato";
 }
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: var(--navH, 0px)
+  scroll-padding-top: var(--navH, 0px);
 }
 
 nav {
-    background-color: $gen-green-1;
-    padding: 1.4%;
-    overflow: hidden;
-    position: fixed;
-    top: 0;
-    width: 98%;
-    height: 10%;
+  background-color: $gen-green-1;
+  padding: 1.4%;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 98%;
+  height: 12%;
+  color: white;
+  display: grid;
+  grid-template-columns: 5fr repeat(4, 1.8fr);
+  align-items: center;
+  z-index: 100;
+  transition: height 0.2s, font-size 0.2s;
+
+  h5 {
+    font-size: 30px;
+    margin: 0;
+    text-align: center;
+  }
+
+  a {
     color: white;
-    font-size: 24px;
-    display: grid;
-    grid-template-columns: 5fr repeat(4, 1.6fr);
-    align-items: center;
-    z-index: 100;
-    transition: height 0.2s, font-size 0.2s;
-    h5{
-        font-size: 30px;
-        margin: 0;
-        text-align: center;
-      }
-    a {
-        color: white;
-        font-size: 23px;
-        text-decoration: none;
-        text-align: center;
-      }
-    a.active {
-        font-weight: bold;
-        text-decoration: underline;
-        border-radius: 25px;
-        background-color: rgb(126, 217, 126);
-        padding: 3%;
-      }
+    font-size: 23px;
+    text-decoration: none;
+    text-align: center;
+
+    &.active {
+      font-weight: bold;
+      text-decoration: underline;
+      border-radius: 25px;
+      background-color: rgb(126, 217, 126);
+      padding: 3%;
+    }
+  }
 }
+
 nav.shrink {
-  height: 4%;
-  a{
+  height: 6%;
+
+  a {
     font-size: 18px;
   }
 }
 
-.section1 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: purple;
-  padding: 3%;
-  width: 94%;
-  color: white;
-  DNAGif {
-    width: 12%;
-    height: auto;
-  }
-  h1, h3, p {
-    text-align: center;
-  }
-  z-index: 1;
-}
-
+.section1,
 .section2 {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  background-color: #009999;
-  padding: 3%;
-  width: 94%;
-  color: black;
+  text-align: center;
+  padding: 1%;
+  width: 98%;
   z-index: 1;
+
+  h1, h3, p {
+  text-align: center;
+  }
+}
+
+.section1 {
+  background-color: purple;
+  color: #fff;
+
+  img.DNAGif {
+    width: 12%;
+    height: auto;
+    display: block;
+  }
+}
+
+.section2 {
+  background-color: #009999;
+  color: #000;
 }
 
 #carousel {
@@ -88,17 +93,20 @@ nav.shrink {
   margin: auto;
   overflow: hidden;
 }
+
 .slides {
   display: flex;
   transition: transform 0.5s ease-in-out;
   will-change: transform;
   gap: 0;
 }
+
 .slide {
   flex: 0 0 100%;
   padding: 0;
   margin: 0;
 }
+
 .slide-content {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
@@ -108,69 +116,103 @@ nav.shrink {
   width: 83%;
   margin: 0 auto;
 }
-.text{
+
+.text {
   color: black;
-  h2{
-    margin: 0 0 .5rem;
+
+  h2 {
+    margin: 0 0 0.5rem;
     font-size: clamp(1.3rem, 2.4vw, 2rem);
   }
-  p{
+
+  p {
     margin: 0 0 1rem;
     line-height: 1.6;
   }
 }
+
 .media img {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
   border-radius: 8px;
   object-fit: cover;
 }
+
 .buttons {
   position: absolute;
   top: 50%;
-  width: 100%;
+  width: 98%;
   display: flex;
   justify-content: space-between;
-  transform: translateY(-50%);
+  transform: translateY(-60%);
+
   button {
-  background: rgba(128,0,128,0.5);
-  border: none;
-  color: white;
-  padding: 20px;
+    background: rgba(128, 0, 128, 0.5);
+    border: none;
+    color: white;
+    padding: 20px;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+}
+
+#faq {
+  .q {
+    button.open {
+      background: none;
+      border: 0;
+      padding: 0;
+      font: inherit;
+      color: white;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+}
+
+.show {
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.dialog {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(92vw, 700px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: 85vh;
+  overflow: auto;
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  text-align: center;
+}
+
+.close {
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  border: 0;
+  background: none;
+  font-size: 1.5rem;
   cursor: pointer;
-  border-radius: 50%;
-  }
-}
-
-#faq{
-  a{
-    color: black;
-    text-decoration: none;
-  }
-}
-
-#thirdfaq {
-  height: auto;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  padding: 3%;
-  video{
-    max-width: 98%;
-    width: 98%;
-    height: auto;
-  }
-  #QA{
-    text-align: center;
-    h3{
-      margin-bottom: 1;
-      font-size: 160%;
-    }
-    p{
-      margin-top: 1;
-      font-size: 125%;
-    }
-  }
 }
 
 .fixed-background {
@@ -180,10 +222,10 @@ nav.shrink {
   background-position: center;
   background-attachment: fixed;
   position: fixed;
-  top: 10%;
+  top: 5%;
   left: 0;
   width: 100%;
-  z-index: -1; 
+  z-index: -1;
 }
 
 .content {
@@ -195,28 +237,41 @@ nav.shrink {
   grid-template-columns: repeat(3, 1fr);
   position: relative;
   z-index: 1;
-  img{
+
+  img {
     max-width: 35%;
     height: auto;
     justify-self: center;
   }
-  h2, p {
+
+  h2,
+  p {
     text-align: center;
   }
 }
 
+.inner_card {
+  display: flex;
+  justify-content: center;
+}
+
+#MyPhoto {
+  width: 150px;
+  height: 150px;
+}
+
 #Footer {
-    background-color: $gen-green-1;
-    color: white;
-    text-align: center;
-    padding: 1%;
-    width: 98%;
-    height: 10%;
-    font-size: 14px;
-    display: grid;
-    grid-template-rows: 1fr 1.2fr;
-    grid-template-columns: repeat(2, 1fr);
-    align-items: center;
+  background-color: $gen-green-1;
+  color: white;
+  text-align: center;
+  padding: 1%;
+  width: 98%;
+  height: 25vh;
+  font-size: 14px;
+  display: grid;
+  grid-template-rows: 1fr 1.2fr;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
 }
 
 
@@ -224,48 +279,51 @@ nav.shrink {
 
 /* 1024 × 768 */
 @media (max-width: 1024px) {
-  #Navbar {
+  nav {
     flex-direction: column;
     align-items: center;
-
-    p {
-      margin: 0.5rem 0;
+    a {
+      padding: 0.5rem 0;
+      font-size: 18px;
     }
   }
-  .section1, .section2 {
-    width: 98%;
+  nav.shrink{
+    a{
+      font-size: 14px;
+    }
   }
 }
 
 /* 1280 × 720 */
 @media (min-width: 1025px) and (max-width: 1280px) {
-  #Navbar h5 {
-    font-size: 1.5rem;
+  nav {
+    flex-direction: column;
+    align-items: center;
+    a {
+      padding: 0.5rem 0;
+      font-size: 20px;
+    }
   }
-  #Footer {
-    font-size: 0.85rem;
+  nav.shrink{
+    a{
+      font-size: 17px;
+    }
   }
 }
 
 /* 1366 × 768 */
 @media (min-width: 1281px) and (max-width: 1366px) {
-  #Navbar {
-    justify-content: space-around;
+  nav {
+    flex-direction: column;
+    align-items: center;
+    a {
+      padding: 0.5rem 0;
+      font-size: 25px;
+    }
   }
-  #GIFdiv img {
-    max-width: 80%;
-  }
-}
-
-/* 1920 × 1080 */
-@media (min-width: 1367px) {
-  body {
-    font-size: 1.1rem;
-  }
-  #GIFdiv img {
-    max-width: 60%;
-  }
-  #Footer {
-    font-size: 1rem;
+  nav.shrink{
+    a{
+      font-size: 22px;
+    }
   }
 }
